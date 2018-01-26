@@ -1,0 +1,11 @@
+c:\Users\f29pl\Desktop\Big_Bank_Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.deps.json
+c:\Users\f29pl\Desktop\Big_Bank_Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.runtimeconfig.json
+c:\Users\f29pl\Desktop\Big_Bank_Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.runtimeconfig.dev.json
+c:\Users\f29pl\Desktop\Big_Bank_Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.dll
+c:\Users\f29pl\Desktop\Big_Bank_Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.pdb
+c:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.csproj.CoreCompileInputs.cache
+c:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.AssemblyInfoInputs.cache
+c:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.AssemblyInfo.cs
+c:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.dll
+c:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.pdb
+C:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.csprojResolveAssemblyReference.cache

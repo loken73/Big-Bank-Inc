@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Big_Bank_Inc.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
