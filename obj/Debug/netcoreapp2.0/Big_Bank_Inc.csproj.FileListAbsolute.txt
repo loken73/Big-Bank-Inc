@@ -9,3 +9,14 @@ c:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.Assembl
 c:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.dll
 c:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.pdb
 C:\Users\f29pl\Desktop\Big_Bank_Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.csprojResolveAssemblyReference.cache
+C:\Users\f29pl\Desktop\Big Bank Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.deps.json
+C:\Users\f29pl\Desktop\Big Bank Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.runtimeconfig.json
+C:\Users\f29pl\Desktop\Big Bank Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.runtimeconfig.dev.json
+C:\Users\f29pl\Desktop\Big Bank Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.dll
+C:\Users\f29pl\Desktop\Big Bank Inc\bin\Debug\netcoreapp2.0\Big_Bank_Inc.pdb
+C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.csprojResolveAssemblyReference.cache
+C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.csproj.CoreCompileInputs.cache
+C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.AssemblyInfoInputs.cache
+C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.AssemblyInfo.cs
+C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.dll
+C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.pdb
