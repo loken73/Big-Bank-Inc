@@ -669,12 +669,15 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\f29pl\\Desktop\\Big Bank Inc\\Big_Bank_Inc.csproj",
+      "projectUniqueName": "C:\\Users\\f29pl\\Desktop\\Big-Bank-Inc\\Big-Bank-Inc\\Big_Bank_Inc.csproj",
       "projectName": "Big_Bank_Inc",
-      "projectPath": "C:\\Users\\f29pl\\Desktop\\Big Bank Inc\\Big_Bank_Inc.csproj",
+      "projectPath": "C:\\Users\\f29pl\\Desktop\\Big-Bank-Inc\\Big-Bank-Inc\\Big_Bank_Inc.csproj",
       "packagesPath": "C:\\Users\\f29pl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\f29pl\\Desktop\\Big Bank Inc\\obj\\",
+      "outputPath": "C:\\Users\\f29pl\\Desktop\\Big-Bank-Inc\\Big-Bank-Inc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
