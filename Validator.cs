@@ -6,21 +6,31 @@ namespace Big_Bank_Inc
 {
     public static class Validator
     {
-        public  static string ValidateUserFirstName()
+        private static bool IsInputGivenNumeric(string userInput)
         {
-            var firstName = "";
+            bool intInString = Int32.TryParse(userInput, out int result);
+
+            return intInString;
+        }
+
+        public static string ValidateNameGiven(string guide)
+        {
+            var inputName = "";
             bool isNumber;
 
             do
             {
-                System.Console.WriteLine("Please provide your first name.");
-                firstName = Console.ReadLine();
-                isNumber = IsInputGivenNumeric(firstName);
-                System.Console.WriteLine();
+                if (guide == "1")
+                {
+                    inputName = Menu.PromptFirstName();
+                }
+                inputName = Menu.PromptFirstName();
+                isNumber = IsInputGivenNumeric(inputName);
+                Console.WriteLine();
 
-            } while (firstName.Length < 2 || isNumber == true);
+            } while (inputName.Length < 2 || isNumber == true);
 
-            return firstName;
+            return inputName;
         }
     }
 }
