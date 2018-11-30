@@ -63,6 +63,12 @@ namespace Big_Bank_Inc
             return input;
         }
 
+        public static void OpenAccountDisplayByType(Account generatedAccount)
+        {
+            Console.WriteLine($"How much would you like to add to open account { generatedAccount.AccountNumber }.");
+            System.Console.WriteLine();
+        }
+
     }
 
 }
