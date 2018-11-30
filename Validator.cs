@@ -52,5 +52,21 @@ namespace Big_Bank_Inc
 
             return ssn;
         }
+
+        public static decimal IsInitialInvestmentDecimal()
+        {
+            var enteredAmount = Console.ReadLine();
+            decimal openingAmount;
+            bool amountIsInt;
+
+            do
+            {
+
+                amountIsInt = Decimal.TryParse(enteredAmount, out openingAmount);
+
+            } while (amountIsInt == false);
+
+            return openingAmount;
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace Big_Bank_Inc
 
         private DateTime _startDate;
 
-        private User _user;
+        private static User _user;
 
         public int AccountNumber// => _accountNumber;
         { 
@@ -91,6 +91,11 @@ namespace Big_Bank_Inc
 
             return accountToGenerate;
           
+        }
+
+        public static Account FindAccountByLastFourDigits(string accountLastFourDigits)
+        {
+            return _user.Accounts.Find(act => act.AccountNumber.ToString().Contains(accountLastFourDigits));
         }
     }
 }

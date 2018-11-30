@@ -16,7 +16,7 @@ namespace Big_Bank_Inc
         {
             do 
             {
-                MainMenuWriter();
+                Menu.MainMenuWriter("");
                
                 //Create User Option
                 if (mainOption == "1")
@@ -54,11 +54,11 @@ namespace Big_Bank_Inc
 
                             Menu.OpenAccountDisplayByType(checkingAccount);
 
-                            decimal openingAmount = IsInitialInvestmentDecimal();
+                            decimal openingAmount = Validator.IsInitialInvestmentDecimal();
 
                             checkingAccount.InitialInvestment(openingAmount, new DateTime(2015, 01, 01));
 
-                            DisplayInitialAccountInvestment(checkingAccount);
+                            Menu.DisplayInitialAccountInvestment(checkingAccount);
                         }
 
                         //Create Savings Account 
@@ -69,11 +69,11 @@ namespace Big_Bank_Inc
 
                             Menu.OpenAccountDisplayByType(savingsAccount);
 
-                            decimal openingAmount = IsInitialInvestmentDecimal();
+                            decimal openingAmount = Validator.IsInitialInvestmentDecimal();
 
                             savingsAccount.InitialInvestment(openingAmount, new DateTime(2015, 01, 01));
 
-                            DisplayInitialAccountInvestment(savingsAccount);
+                            Menu.DisplayInitialAccountInvestment(savingsAccount);
 
                         }
                     }
@@ -92,13 +92,13 @@ namespace Big_Bank_Inc
                     //Manage an Individual Checking or Savings Account Option
                     if (manageAccountChoice == "1")
                     {
-                        AccountsMenuHeader();
+                        Menu.AccountsMenuHeader();
 
-                        AccountsMenuListOfAccounts();
+                        Menu.AccountsMenuListOfAccounts(currentUser);
 
-                        string accountLastFourDigits = LastFourAccountDigits();
+                        string accountLastFourDigits = Menu.LastFourAccountDigits();
 
-                        Account selectedAccount = FindAccountByLastFourDigits(accountLastFourDigits);
+                        Account selectedAccount = Account.FindAccountByLastFourDigits(accountLastFourDigits);
 
                         if (selectedAccount != null)
                         {
@@ -126,7 +126,7 @@ namespace Big_Bank_Inc
                     if (manageAccountChoice == "2")
                     {
                         //Header of all accounts with current users name displayed
-                        ManageAllAccountsUserHeader();
+                        Menu.ManageAllAccountsUserHeader(currentUser);
 
                         //Bools to check if either a savings or checking account exist in the current users list of accounts
                         var checkingIsInList = currentUser.Accounts.Exists(act => act as CheckingAccount != null);
@@ -134,22 +134,22 @@ namespace Big_Bank_Inc
 
                         if (checkingIsInList)
                         {                           
-                            ManageAccountsCheckingAccountListHeader();
+                            Menu.ManageAccountsCheckingAccountListHeader();
 
-                            ListOfCheckingAccounts();
+                            Menu.ListOfCheckingAccounts(currentUser, totalInAllAccounts);
                         }
 
                         System.Console.WriteLine();
 
                         if (savingsIsInList)
                         {
-                            ManageAccountsSavingsAccountListHeader();
+                            Menu.ManageAccountsSavingsAccountListHeader();
 
                             ListOfSavingsAccounts();
 
                         }
 
-                        TotalInAllAccounts();
+                        Menu.TotalInAllAccounts(totalInAllAccounts);
                     }
                 }
 
@@ -164,110 +164,6 @@ namespace Big_Bank_Inc
 
 
         #region
-
-
-        private static decimal IsInitialInvestmentDecimal()
-        {
-            var enteredAmount = Console.ReadLine();
-            decimal openingAmount;
-            bool amountIsInt;
-
-            do
-            {
-
-                amountIsInt = Decimal.TryParse(enteredAmount, out openingAmount);
-
-            } while (amountIsInt == false);
-
-            return openingAmount;
-        }
-
-        private static void DisplayInitialAccountInvestment(Account generatedAccount)
-        {
-            Console.WriteLine();
-
-            System.Console.WriteLine($"You added ${ generatedAccount.AccountAmountCurrent } to your savings account { generatedAccount.AccountNumber }.");
-
-            System.Console.WriteLine();
-        }
-
-        private static void AccountsMenuHeader()
-        {
-            System.Console.WriteLine();
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            System.Console.WriteLine("List of Current Accounts");
-
-            Console.ResetColor();
-            System.Console.WriteLine("--------------------------");
-        }
-
-        private static void AccountsMenuListOfAccounts()
-        {
-            var accountListOption = 1;
-
-            foreach (Account act in currentUser.Accounts)
-            {
-
-                if (act as CheckingAccount != null)
-                {
-                    System.Console.WriteLine("{0} - Checking: {1}", accountListOption, act.AccountNumber);
-
-                }
-
-                if (act as SavingsAccount != null)
-                {
-                    System.Console.WriteLine("{0} - Savings: {1}", accountListOption, act.AccountNumber);
-
-                }
-
-                accountListOption++;
-            }
-        }
-
-        private static string LastFourAccountDigits()
-        {
-            System.Console.WriteLine();
-
-            System.Console.WriteLine("Which account above would you like to modify? Please enter the last 4 digits of the account number.");
-
-            return Console.ReadLine();
-        }
-
-        public static void ManageAllAccountsUserHeader()
-        {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            System.Console.WriteLine();
-
-            System.Console.WriteLine($"Account Holder: { currentUser.FullName }");
-            Console.ResetColor();
-            System.Console.WriteLine("-----------------------------------");
-
-            Console.WriteLine();
-        }
-
-        public static void ManageAccountsCheckingAccountListHeader()
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            System.Console.WriteLine("Checking Accounts");
-
-            Console.ResetColor();
-            System.Console.WriteLine("-----------------");
-        }
-
-        public static void ManageAccountsSavingsAccountListHeader()
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            System.Console.WriteLine("Savings Accounts");
-
-            Console.ResetColor();
-            System.Console.WriteLine("-----------------");
-        }
-
-        private static Account FindAccountByLastFourDigits(string accountLastFourDigits)
-        {
-            return currentUser.Accounts.Find(act => act.AccountNumber.ToString().Contains(accountLastFourDigits));
-        }
 
         private static void ListAsCheckingOrSavings(Account selectedAccount)
         {
@@ -284,18 +180,6 @@ namespace Big_Bank_Inc
             System.Console.WriteLine();
         }
 
-        private static void ListOfCheckingAccounts()
-        {
-            foreach (Account act in currentUser.Accounts)
-            {
-                if (act as CheckingAccount != null)
-                {
-                    Console.WriteLine($"{act.AccountNumber} : ${act.AccountAmountCurrent}");
-                    totalInAllAccounts += act.AccountAmountCurrent;
-                }
-            }
-        }
-
         private static void ListOfSavingsAccounts ()
         {
             foreach (Account act in currentUser.Accounts)
@@ -306,28 +190,6 @@ namespace Big_Bank_Inc
                     totalInAllAccounts += act.AccountAmountCurrent;
                 }
             }
-        }
-
-        private static void TotalInAllAccounts()
-        {
-            Console.WriteLine();
-
-            System.Console.WriteLine($"Total Amount of funds deposited currently in bank is ${ totalInAllAccounts }");
-
-            System.Console.WriteLine();
-        }
-
-        private static void MainMenuWriter()
-        {
-            Console.ResetColor();
-
-            System.Console.WriteLine();
-
-            Menu.MenuWriter(Menu.mainOptionsMenu);
-
-            mainOption = Console.ReadLine();
-
-            System.Console.WriteLine();
         }
 
         private static void DepositToSelectedAccount(Account selectedAccount)
@@ -365,12 +227,12 @@ namespace Big_Bank_Inc
 
                 if (isWithdrawAmountDecimal && decimalWithdrawAmount > selectedAccount.AccountAmountCurrent)
                 {
-                    System.Console.WriteLine("You cannot withdraw more funds than are currently in this account. Please enter a new amount.");
+                    Console.WriteLine("You cannot withdraw more funds than are currently in this account. Please enter a new amount.");
                 }
                 else if (isWithdrawAmountDecimal && decimalWithdrawAmount < selectedAccount.AccountAmountCurrent)
                 {
                     selectedAccount.SubtractFromAccount(decimalWithdrawAmount);
-                    System.Console.WriteLine($"Your new account balance for account { selectedAccount.AccountNumber } is ${ selectedAccount.AccountAmountCurrent }");
+                    Console.WriteLine($"Your new account balance for account { selectedAccount.AccountNumber } is ${ selectedAccount.AccountAmountCurrent }");
                 }
 
             } while (decimalWithdrawAmount > selectedAccount.AccountAmountCurrent);
