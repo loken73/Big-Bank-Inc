@@ -20,11 +20,11 @@ namespace Big_Bank_Inc
 
             do
             {
-                if (guide == "f")
+                if (guide == "fn")
                 {
                     inputName = Menu.PromptFirstName();
                 }
-                else if (guide == "l")
+                else if (guide == "ln")
                 {
                     inputName = Menu.PromptLastName();
                 }
@@ -35,6 +35,22 @@ namespace Big_Bank_Inc
             } while (inputName.Length < 2 || isNumber == true);
 
             return inputName;
+        }
+
+        public static string ValidateUserSsn()
+        {
+            var ssn = "";
+            var isNumber = false;
+
+            do
+            {
+                ssn = Menu.PromptSSN();
+                isNumber = IsInputGivenNumeric(ssn);
+                Console.WriteLine();
+
+            } while (ssn.Length < 9 || isNumber == false);
+
+            return ssn;
         }
     }
 }

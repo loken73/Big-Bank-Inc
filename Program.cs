@@ -21,11 +21,11 @@ namespace Big_Bank_Inc
                 //Create User Option
                 if (mainOption == "1")
                 {
-                    string firstName = Validator.ValidateNameGiven("f");
+                    string firstName = Validator.ValidateNameGiven("fn");
 
-                    string lastName = Validator.ValidateNameGiven("l");
+                    string lastName = Validator.ValidateNameGiven("ln");
 
-                    string socialSecurityNumber = ValidateUserSsn();
+                    string socialSecurityNumber = Validator.ValidateUserSsn();
 
                     currentUser = CreateUser(firstName, lastName, socialSecurityNumber);              
                 }
@@ -169,22 +169,7 @@ namespace Big_Bank_Inc
             return new User(firstName, lastName, socialSecurityNumber);
         }
 
-        private static string ValidateUserSsn()
-        {
-            var ssn = "";
-            var isNumber = false;
-
-            do
-            {
-                System.Console.WriteLine("Please provide your social security number.");
-                ssn = Console.ReadLine();
-                isNumber = IsInputGivenNumeric(ssn);
-                System.Console.WriteLine();
-
-            } while (ssn.Length < 9 || isNumber == false);
-
-            return ssn;
-        }
+        
 
         private static bool IsInputGivenNumeric (string userInput)
         {
