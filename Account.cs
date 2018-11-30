@@ -73,5 +73,24 @@ namespace Big_Bank_Inc
 
             _accountNumber = randomNum.Next(100000001, 999999999);
         }
+
+        public static Account CreateAccountByType(string createAccountChoice, User currentUser)
+        {
+            Account accountToGenerate = null;
+
+            if (createAccountChoice == "1")
+            {
+                accountToGenerate = new CheckingAccount(currentUser);
+            }
+            if (createAccountChoice == "2")
+            {
+                accountToGenerate = new SavingsAccount(currentUser);
+            }
+
+            currentUser.Accounts.Add(accountToGenerate);
+
+            return accountToGenerate;
+          
+        }
     }
 }

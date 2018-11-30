@@ -8,9 +8,9 @@ namespace Big_Bank_Inc
 
         private static string mainOption = "";
 
-        private static User currentUser = null;
-
         private static decimal totalInAllAccounts;
+
+        private static User currentUser = null;
 
         static void Main(string[] args)
         {
@@ -27,7 +27,7 @@ namespace Big_Bank_Inc
 
                     string socialSecurityNumber = Validator.ValidateUserSsn();
 
-                    currentUser = CreateUser(firstName, lastName, socialSecurityNumber);              
+                    currentUser = User.CreateUser(firstName, lastName, socialSecurityNumber);              
                 }
                 //Create Account Option
                 if (mainOption == "2")
@@ -50,9 +50,9 @@ namespace Big_Bank_Inc
                         //Create Checking Account Option
                         if (createAccountOption == "1")
                         {
-                            Account checkingAccount = CreateAccountByType(createAccountOption);
+                            Account checkingAccount = Account.CreateAccountByType(createAccountOption, currentUser);
 
-                            OpenAccountDisplayByType(checkingAccount);
+                            Menu.OpenAccountDisplayByType(checkingAccount);
 
                             decimal openingAmount = IsInitialInvestmentDecimal();
 
@@ -65,9 +65,9 @@ namespace Big_Bank_Inc
                         if (createAccountOption == "2")
                         {
 
-                            Account savingsAccount = CreateAccountByType(createAccountOption);
+                            Account savingsAccount = Account.CreateAccountByType(createAccountOption, currentUser);
 
-                            OpenAccountDisplayByType(savingsAccount);
+                            Menu.OpenAccountDisplayByType(savingsAccount);
 
                             decimal openingAmount = IsInitialInvestmentDecimal();
 
@@ -163,61 +163,8 @@ namespace Big_Bank_Inc
          */
 
 
+        #region
 
-        private static User CreateUser(string firstName, string lastName, string socialSecurityNumber)
-        {
-            return new User(firstName, lastName, socialSecurityNumber);
-        }
-
-        
-
-        private static bool IsInputGivenNumeric (string userInput)
-        {
-            bool intInString = Int32.TryParse(userInput, out int result);
-
-            return intInString;
-        }
-
-        private static Account CreateAccountByType (string createAccountChoice)
-        {
-            Account accountToGenerate = null;
-
-            if (createAccountChoice == "1")
-            {
-                accountToGenerate = new CheckingAccount(currentUser);
-            }
-            if (createAccountChoice == "2")
-            {
-                accountToGenerate = new SavingsAccount(currentUser);
-            }
-
-            currentUser.Accounts.Add(accountToGenerate);
-
-            return accountToGenerate;
-            //DisplayNewAccountNumberByType(accountToGenerate);
-        }
-
-        private static void DisplayNewAccountNumberByType (Account generatedAccount)
-        {
-            if (generatedAccount as CheckingAccount != null)
-            {
-                Console.WriteLine
-                ($"Hello { currentUser.FullName }, your new Checking Account Number at Big Bank Inc is { generatedAccount.AccountNumber }");
-                System.Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine
-                ($"Hello { currentUser.FullName }, your new Savings Account Number at Big Bank Inc is { generatedAccount.AccountNumber }");
-                System.Console.WriteLine();
-            }
-        }
-
-        private static void OpenAccountDisplayByType (Account generatedAccount)
-        {
-            Console.WriteLine($"How much would you like to add to open account { generatedAccount.AccountNumber }.");
-            System.Console.WriteLine();
-        }
 
         private static decimal IsInitialInvestmentDecimal()
         {
@@ -428,6 +375,7 @@ namespace Big_Bank_Inc
 
             } while (decimalWithdrawAmount > selectedAccount.AccountAmountCurrent);
         }
+        #endregion
     }
 
 }
