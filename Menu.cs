@@ -2,9 +2,11 @@ using System;
 
 namespace Big_Bank_Inc
 {
-    public class Menu 
+    public static class Menu 
     {
-        public string [] mainOptionsMenu = new string [] 
+        private static string input;
+
+        public static string [] mainOptionsMenu = new string [] 
         {
             "- Create New User",
             "- Create New Account",
@@ -12,25 +14,25 @@ namespace Big_Bank_Inc
             "- Quit"
         };
 
-        public string [] createAccountOptionsMenu = new string []
+        public static string [] createAccountOptionsMenu = new string []
         {
             "- Create a New Checking Account",
             "- Create a New Savings Account",
         };
 
-        public string[] manageAccountOptionsMenu = new string []
+        public static string[] manageAccountOptionsMenu = new string []
         {
             "- Manage an Existing Account",
             "- Check Balances"
         };
 
-        public string [] individualAccountOptions = new string []
+        public static string [] individualAccountOptions = new string []
         {
             "- Deposit to selected Account",
             "- Withdraw from selected account"
         };
 
-        public void MenuWriter (string[] menuArray)
+        public static void MenuWriter (string[] menuArray)
         {
             for(int i = 0; i <= menuArray.Length - 1; i++)
             {
@@ -40,22 +42,26 @@ namespace Big_Bank_Inc
             }
         }
 
-        public string PromptFirstName ()
+        public static string PromptFirstName ()
         {
-            string firstName;
             System.Console.WriteLine("Please provide your first name.");
-            firstName = Console.ReadLine();
-            return firstName;
+            input = Console.ReadLine();
+            return input;
         }
 
-        public string PromptLastName()
+        public static string PromptLastName()
         {
-            string lastName;
             System.Console.WriteLine("Please provide your first name.");
-            lastName = Console.ReadLine();
-            return lastName;
+            input = Console.ReadLine();
+            return input;
         }
 
+        public static string PromptSSN ()
+        {
+            System.Console.WriteLine("Please provide your social security number.");
+            input = Console.ReadLine();
+            return input;
+        }
 
     }
 
