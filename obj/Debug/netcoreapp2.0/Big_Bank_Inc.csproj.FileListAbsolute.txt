@@ -20,3 +20,9 @@ C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.Assembl
 C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.AssemblyInfo.cs
 C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.dll
 C:\Users\f29pl\Desktop\Big Bank Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.pdb
+C:\Users\f29pl\Desktop\Big-Bank-Inc\Big-Bank-Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.csprojResolveAssemblyReference.cache
+C:\Users\f29pl\Desktop\Big-Bank-Inc\Big-Bank-Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.csproj.CoreCompileInputs.cache
+C:\Users\f29pl\Desktop\Big-Bank-Inc\Big-Bank-Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.AssemblyInfoInputs.cache
+C:\Users\f29pl\Desktop\Big-Bank-Inc\Big-Bank-Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.AssemblyInfo.cs
+C:\Users\f29pl\Desktop\Big-Bank-Inc\Big-Bank-Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.dll
+C:\Users\f29pl\Desktop\Big-Bank-Inc\Big-Bank-Inc\obj\Debug\netcoreapp2.0\Big_Bank_Inc.pdb

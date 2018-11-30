@@ -1,3 +1,5 @@
+using System;
+
 namespace Big_Bank_Inc
 {
     public class Menu 
@@ -34,8 +36,24 @@ namespace Big_Bank_Inc
             {
                 var optionNumber = i+1;
 
-                System.Console.WriteLine("{0} {1}", optionNumber, menuArray[i]);
+                Console.WriteLine("{0} {1}", optionNumber, menuArray[i]);
             }
+        }
+
+        public string PromptFirstName ()
+        {
+            string firstName;
+            System.Console.WriteLine("Please provide your first name.");
+            firstName = Console.ReadLine();
+            return firstName;
+        }
+
+        public string PromptLastName()
+        {
+            string lastName;
+            System.Console.WriteLine("Please provide your first name.");
+            lastName = Console.ReadLine();
+            return lastName;
         }
 
 
