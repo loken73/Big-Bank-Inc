@@ -169,15 +169,15 @@ namespace Big_Bank_Inc
         {
             if (selectedAccount as CheckingAccount != null)
             {
-                System.Console.WriteLine($"Checking Account: {selectedAccount.AccountNumber}");
+                Console.WriteLine($"Checking Account: {selectedAccount.AccountNumber}");
             }
 
             if (selectedAccount as SavingsAccount != null)
             {
-                System.Console.WriteLine($"Savings Account: {selectedAccount.AccountNumber}");
+                Console.WriteLine($"Savings Account: {selectedAccount.AccountNumber}");
             }
 
-            System.Console.WriteLine();
+            Console.WriteLine();
         }
 
         private static void ListOfSavingsAccounts ()
@@ -199,7 +199,7 @@ namespace Big_Bank_Inc
 
             do
             {
-                System.Console.WriteLine("How much would you like to deposit?");
+                Console.WriteLine("How much would you like to deposit?");
 
                 string depositAmount = Console.ReadLine();
 
@@ -209,12 +209,12 @@ namespace Big_Bank_Inc
 
             selectedAccount.AddToAccount(decimalAmountEntered);
 
-            System.Console.WriteLine($"Your account now has ${ decimalAmountEntered }");
+            Console.WriteLine($"Your account now has ${ decimalAmountEntered }");
         }
 
         private static void SubtractFromAccountSelected(Account selectedAccount)
         {
-            System.Console.WriteLine($"How much money would you like to withdraw from your account { selectedAccount.AccountNumber }?");
+            Console.WriteLine($"How much money would you like to withdraw from your account { selectedAccount.AccountNumber }?");
 
             bool isWithdrawAmountDecimal;
             decimal decimalWithdrawAmount;
