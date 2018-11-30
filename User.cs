@@ -23,9 +23,14 @@ namespace Big_Bank_Inc
 
         public User(string firstName, string lastName, string sSN)
         {
-            this._firstName = firstName;
-            this._lastName = lastName;
-            this.SocialSecurity = sSN;
+            _firstName = firstName;
+            _lastName = lastName;
+            SocialSecurity = sSN;
         }
-    }
+
+        public static User CreateUser(string firstName, string lastName, string socialSecurityNumber)
+        {
+            return new User(firstName, lastName, socialSecurityNumber);
+        }
+    }   
 }
