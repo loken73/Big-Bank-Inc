@@ -10,8 +10,6 @@ namespace Big_Bank_Inc
 
         private static User currentUser = null;
 
-        private static Menu fullMenu = new Menu();
-
         private static decimal totalInAllAccounts;
 
         static void Main(string[] args)
@@ -23,9 +21,9 @@ namespace Big_Bank_Inc
                 //Create User Option
                 if (mainOption == "1")
                 {
-                    string firstName = ValidateUserFirstName();
+                    string firstName = Validator.ValidateNameGiven("f");
 
-                    string lastName = ValidateUserLastName();
+                    string lastName = Validator.ValidateNameGiven("l");
 
                     string socialSecurityNumber = ValidateUserSsn();
 
@@ -44,7 +42,7 @@ namespace Big_Bank_Inc
                     //Else if current user exists
                     else 
                     {
-                        fullMenu.MenuWriter(fullMenu.createAccountOptionsMenu);
+                        Menu.MenuWriter(Menu.createAccountOptionsMenu);
                         createAccountOption = Console.ReadLine();
 
                         System.Console.WriteLine();
@@ -85,7 +83,7 @@ namespace Big_Bank_Inc
                 {
                     var manageAccountChoice = "";
 
-                    fullMenu.MenuWriter(fullMenu.manageAccountOptionsMenu);
+                    Menu.MenuWriter(Menu.manageAccountOptionsMenu);
 
                     manageAccountChoice = Console.ReadLine();
 
@@ -106,7 +104,7 @@ namespace Big_Bank_Inc
                         {
                             ListAsCheckingOrSavings(selectedAccount);
 
-                            fullMenu.MenuWriter(fullMenu.individualAccountOptions);
+                            Menu.MenuWriter(Menu.individualAccountOptions);
 
                             string withdrawOrDepositChoice = Console.ReadLine();
 
@@ -169,40 +167,6 @@ namespace Big_Bank_Inc
         private static User CreateUser(string firstName, string lastName, string socialSecurityNumber)
         {
             return new User(firstName, lastName, socialSecurityNumber);
-        }
-
-        private static string ValidateUserFirstName()
-        {
-            var firstName = "";
-            bool isNumber;
-
-            do
-            {
-                System.Console.WriteLine("Please provide your first name.");
-                firstName = Console.ReadLine();
-                isNumber = IsInputGivenNumeric(firstName);
-                System.Console.WriteLine();
-
-            } while (firstName.Length < 2 || isNumber == true);
-
-            return firstName;
-        }
-
-        private static string ValidateUserLastName()
-        {
-            var lastName = "";
-            bool isNumber;
-
-            do
-            {
-                System.Console.WriteLine("Please provide your last name.");
-                lastName = Console.ReadLine();
-                isNumber = IsInputGivenNumeric(lastName);
-                System.Console.WriteLine();
-
-            } while (lastName.Length < 2 || isNumber == true);
-
-            return lastName;
         }
 
         private static string ValidateUserSsn()
@@ -427,7 +391,7 @@ namespace Big_Bank_Inc
 
             System.Console.WriteLine();
 
-            fullMenu.MenuWriter(fullMenu.mainOptionsMenu);
+            Menu.MenuWriter(Menu.mainOptionsMenu);
 
             mainOption = Console.ReadLine();
 

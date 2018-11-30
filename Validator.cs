@@ -20,11 +20,15 @@ namespace Big_Bank_Inc
 
             do
             {
-                if (guide == "1")
+                if (guide == "f")
                 {
                     inputName = Menu.PromptFirstName();
                 }
-                inputName = Menu.PromptFirstName();
+                else if (guide == "l")
+                {
+                    inputName = Menu.PromptLastName();
+                }
+                
                 isNumber = IsInputGivenNumeric(inputName);
                 Console.WriteLine();
 
